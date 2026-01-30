@@ -1,6 +1,7 @@
 import ProductCard from "@/components/ProductCard";
 import type { Product } from "@/types/product";
 import Header from "@/components/Header";
+import AddToCartButton from "@/components/AddToCartButton";
 
 // Server-side data fetching
 async function getProducts(): Promise<Product[]> {

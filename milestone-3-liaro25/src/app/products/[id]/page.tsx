@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/product";
+import AddToCartButton from "@/components/AddToCartButton";
 
 type PageProps = {
   params: { id: string };
@@ -34,7 +35,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           <div className="relative aspect-square w-full overflow-hidden rounded-2xl border bg-white">
             <Image
               src={imageUrl}
-              alt={product.title}
+              alt={product.title} 
               fill
               className="object-cover"
             />
@@ -52,12 +53,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
               {product.description}
             </p>
 
-            <button
-              type="button"
-              className="mt-6 w-full rounded-xl bg-gray-900 px-4 py-3 text-sm font-semibold text-white hover:bg-gray-800"
-            >
-              Add to Cart
-            </button>
+            <AddToCartButton product={product} />
+
           </div>
         </div>
       </main>
