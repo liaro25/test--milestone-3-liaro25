@@ -9,12 +9,20 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/products" className="block">
+        <Link href="/" className="block">
           <p className="text-xl font-extrabold tracking-tight">RevoShop</p>
           <p className="text-sm text-gray-600">
             Where online feels like offline — without the hustle
           </p>
         </Link>
+
+        <nav className="flex items-center gap-6"></nav>
+           <Link
+            href="/faq"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900"
+          >
+            FAQ
+          </Link>
 
         <Link
           href="/cart"
