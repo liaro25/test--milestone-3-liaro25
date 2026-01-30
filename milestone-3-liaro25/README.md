@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RevoShop
 
-## Getting Started
+**Where online feels like offline — without the hustle of queueing**
 
-First, run the development server:
+RevoShop is a demo e-commerce web application built as part of **RevoU Milestone 3**.  
+The project focuses on **Next.js App Router**, **TypeScript**, clean architecture, and global state management.
+
+---
+
+### NextJS Version Used
+
+- **Node.js v18.x**
+- **npm v9+ / v10+**
+
+### Steps
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+| Category               | Tools / Technologies         | Description                                                             |
+| ---------------------- | ---------------------------- | ----------------------------------------------------------------------- |
+| **Design**             | Figma                        | UI exploration and layout planning for product listing and detail pages |
+| **Development**        | Next.js 14                   | React framework using App Router and Server Components                  |
+|                        | React 18                     | UI library for building reusable and interactive components             |
+|                        | TypeScript                   | Static typing for improved code safety and maintainability              |
+|                        | Tailwind CSS                 | Utility-first CSS framework for responsive and consistent styling       |
+|                        | React Context API            | Global state management for shopping cart functionality                 |
+| **State Persistence**  | localStorage                 | Client-side persistence for cart data across page refresh               |
+| **Data Source**        | Platzi Fake Store API        | External API used to fetch product data                                 |
+| **Rendering Strategy** | Server-Side Rendering (SSR)  | Dynamic data fetching for product list and detail pages                 |
+|                        | Static Site Generation (SSG) | Static rendering for FAQ and informational pages                        |
+| **Version Control**    | Git & GitHub                 | Source code management and version control                              |
+| **Deployment**         | Vercel                       | Hosting and continuous deployment for the Next.js application           |
+| **Learning Resources** | Official Next.js Docs        | Reference for App Router, routing, and rendering strategies             |
+|                        | ChatGPT                      | Architecture discussion, debugging guidance, and code explanation       |
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🛒 Product
 
-## Deploy on Vercel
+- Product listing page (`/products`)
+- Product detail page (`/products/[id]`)
+- Dynamic routing using Next.js App Router
+- Product data fetched from an external API
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🧺 Cart
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add to Cart from:
+  - Product listing page
+  - Product detail page
+- Quantity control with increase (`+`) and decrease (`−`)
+- Remove individual items and clear entire cart
+- Cart state persisted using **localStorage**
+- Real-time cart item count displayed in header
+
+### 🧭 Navigation
+
+- Global header navigation including:
+  - **RevoShop** brand (clickable → Home)
+  - FAQ page
+  - Cart page
+
+### 📄 FAQ
+
+- Static FAQ page (`/faq`)
+- Built using **Static Site Generation (SSG)**
+
+📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── products/
+│   │   ├── page.tsx
+│   │   └── [id]/page.tsx
+│   ├── cart/page.tsx
+│   ├── faq/page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/
+│   ├── Header.tsx
+│   ├── ProductCard.tsx
+│   └── AddToCartButton.tsx
+│
+├── context/
+│   └── CartContext.tsx
+│
+├── types/
+│   ├── product.ts
+│   └── cart.ts
+│
+└── styles/
+```
